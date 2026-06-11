@@ -1,0 +1,1079 @@
+/* ===== COLOR PALETTE - DREAMY INDIE AESTHETIC ===== */
+:root {
+    --deep-navy: #0a1428;
+    --navy-blue: #1a2a4a;
+    --soft-navy: #2d3e5f;
+    --soft-white: #f5f3f0;
+    --cream: #faf8f6;
+    --yellow-flower: #ffd166;
+    --soft-pink: #f4b4d4;
+    --blush-pink: #ffc9e3;
+    --gold-accent: #e8b86d;
+    --text-light: #d4c5b0;
+    --text-dark: #2d1b3d;
+    
+    --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy-blue) 100%);
+    color: var(--text-light);
+    overflow-x: hidden;
+    line-height: 1.8;
+    position: relative;
+}
+
+/* ===== ANIMATED BACKGROUND ===== */
+
+.starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    width: 1.5px;
+    height: 1.5px;
+    background: rgba(245, 243, 240, 0.8);
+    border-radius: 50%;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.fireflies {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.firefly {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: radial-gradient(circle, #ffd166, transparent);
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: floatFirefly 8s ease-in-out infinite;
+}
+
+@keyframes floatFirefly {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0;
+    }
+}
+
+.flower-petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.petal {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: fallPetal 12s ease-in infinite;
+    opacity: 0.6;
+}
+
+@keyframes fallPetal {
+    0% {
+        top: -20px;
+        transform: translateX(0) rotateZ(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        top: 100vh;
+        transform: translateX(100px) rotateZ(360deg);
+        opacity: 0;
+    }
+}
+
+.moon {
+    position: fixed;
+    top: 5%;
+    right: 10%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3), transparent);
+    border-radius: 50%;
+    filter: blur(3px);
+    z-index: 2;
+    animation: moonGlow 4s ease-in-out infinite;
+}
+
+@keyframes moonGlow {
+    0%, 100% { box-shadow: 0 0 60px rgba(255, 255, 255, 0.3); }
+    50% { box-shadow: 0 0 80px rgba(255, 255, 255, 0.5); }
+}
+
+.wildflowers {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150"><g fill="%23ffd166" opacity="0.3"><circle cx="100" cy="120" r="8"/><circle cx="150" cy="130" r="6"/><circle cx="200" cy="115" r="7"/><circle cx="280" cy="125" r="5"/><circle cx="350" cy="110" r="8"/><circle cx="420" cy="128" r="6"/><circle cx="500" cy="115" r="7"/><circle cx="580" cy="130" r="5"/><circle cx="660" cy="120" r="8"/><circle cx="740" cy="125" r="6"/><circle cx="820" cy="110" r="7"/><circle cx="900" cy="128" r="5"/><circle cx="980" cy="120" r="8"/><circle cx="1050" cy="125" r="6"/><circle cx="1120" cy="115" r="7"/></g></svg>') repeat-x;
+    background-size: 1200px 150px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* ===== MAIN PAGE CONTAINER ===== */
+
+.main-page {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero-music-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+    padding: 0;
+}
+
+.hero-part {
+    flex: 0 0 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-content {
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.main-title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--soft-white);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-text {
+    color: var(--yellow-flower);
+    display: inline;
+}
+
+.subtitle {
+    font-family: 'Indie Flower', cursive;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: var(--soft-pink);
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-hint p {
+    font-family: 'Indie Flower', cursive;
+    color: var(--yellow-flower);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.scroll-hint i {
+    color: var(--soft-pink);
+    font-size: 1.5rem;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MUSIC PLAYER SECTION ===== */
+
+.music-part {
+    flex: 0 0 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.music-container {
+    text-align: center;
+    max-width: 400px;
+}
+
+.section-heading {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--soft-white);
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.special-note {
+    background: rgba(244, 180, 212, 0.1);
+    border-left: 3px solid var(--soft-pink);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Indie Flower', cursive;
+    backdrop-filter: blur(10px);
+}
+
+.special-note p {
+    color: var(--soft-white);
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    line-height: 1.6;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.vinyl-player {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.vinyl-record {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset -10px -10px 20px rgba(0, 0, 0, 0.8), inset 5px 5px 15px rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spinVinyl 8s linear infinite;
+    position: relative;
+}
+
+.vinyl-record.playing {
+    animation: spinVinyl 3s linear infinite;
+}
+
+@keyframes spinVinyl {
+    0% { transform: rotateZ(0deg); }
+    100% { transform: rotateZ(360deg); }
+}
+
+.vinyl-inner {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.8), inset 2px 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.vinyl-label {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--soft-pink) 0%, var(--blush-pink) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(244, 180, 212, 0.4);
+    position: relative;
+}
+
+.vinyl-label::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--soft-white);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.label-text {
+    text-align: center;
+    color: var(--text-dark);
+    font-family: 'Indie Flower', cursive;
+    font-size: 0.8rem;
+}
+
+.label-text p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.player-info {
+    margin-bottom: 1.5rem;
+}
+
+.song-name {
+    font-family: 'Caveat', cursive;
+    color: var(--soft-white);
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.song-artist {
+    font-family: 'Indie Flower', cursive;
+    color: var(--soft-pink);
+    font-size: 0.9rem;
+}
+
+.player-controls {
+    background: rgba(45, 62, 95, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.time-display {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    min-width: 40px;
+    text-align: center;
+}
+
+.progress-track {
+    flex: 1;
+    height: 4px;
+    background: rgba(212, 197, 176, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--soft-pink), var(--yellow-flower));
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.control-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.play-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--soft-pink), var(--blush-pink));
+    border: none;
+    color: var(--soft-white);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    box-shadow: 0 5px 15px rgba(244, 180, 212, 0.3);
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(244, 180, 212, 0.5);
+}
+
+.volume-btn {
+    background: none;
+    border: none;
+    color: var(--yellow-flower);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color var(--transition);
+}
+
+.volume-btn:hover {
+    color: var(--soft-pink);
+}
+
+.volume-control {
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(212, 197, 176, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.volume-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--yellow-flower);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 209, 102, 0.4);
+}
+
+.volume-control::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--yellow-flower);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(255, 209, 102, 0.4);
+}
+
+/* ===== LETTER & CLOSING SECTION (Page 2) ===== */
+
+.letter-closing-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+    padding: 0;
+}
+
+.letter-part {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.closing-part {
+    flex: 0 0 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.letter-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.letter-envelope {
+    position: relative;
+}
+
+.envelope-front {
+    width: 280px;
+    height: 180px;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--soft-white) 100%);
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: floatEnvelope 3s ease-in-out infinite;
+    border: 2px solid var(--soft-pink);
+    position: relative;
+}
+
+.envelope-front:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(244, 180, 212, 0.4);
+}
+
+@keyframes floatEnvelope {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.envelope-decoration {
+    font-size: 2rem;
+    color: var(--soft-pink);
+    margin-bottom: 0.5rem;
+}
+
+.envelope-text {
+    font-family: 'Indie Flower', cursive;
+    color: var(--text-dark);
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+}
+
+.envelope-seal {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--soft-pink);
+    animation: rotateSeal 2s ease-in-out infinite;
+}
+
+@keyframes rotateSeal {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(10deg) scale(1.1); }
+}
+
+/* ===== LETTER MODAL ===== */
+
+.letter-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.letter-modal.active {
+    display: flex;
+}
+
+.letter-modal-content {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+}
+
+.close-letter {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--soft-white);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color var(--transition);
+}
+
+.close-letter:hover {
+    color: var(--soft-pink);
+}
+
+.letter-paper {
+    background: var(--cream);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.letter-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23ffc9e3" stroke-width="0.5" opacity="0.1"/></svg>');
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+.letter-header {
+    margin-bottom: 1.5rem;
+    text-align: right;
+    position: relative;
+    z-index: 1;
+}
+
+.letter-date {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.letter-body {
+    position: relative;
+    z-index: 1;
+}
+
+.letter-greeting {
+    font-family: 'Indie Flower', cursive;
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.letter-text {
+    font-family: 'Indie Flower', cursive;
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 1.5rem;
+}
+
+.letter-closing {
+    font-family: 'Indie Flower', cursive;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    text-align: right;
+    margin: 0;
+}
+
+.letter-closing span {
+    font-family: 'Satisfy', cursive;
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.letter-decoration {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--soft-pink);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+/* ===== CLOSING SECTION STYLES (now part of letter-closing-section) ===== */
+
+.closing-content {
+    animation: fadeInUp 1.2s ease-out;
+    max-width: 600px;
+}
+
+.closing-quote {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--soft-white);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.closing-quote span {
+    color: var(--yellow-flower);
+    display: block;
+}
+
+.heart-beats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    font-size: 3rem;
+}
+
+.heart-beats i {
+    color: var(--soft-pink);
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1); }
+}
+
+.closing-note {
+    font-family: 'Indie Flower', cursive;
+    color: var(--soft-pink);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 1024px) {
+    .hero-music-section,
+    .letter-closing-section {
+        flex-direction: column;
+    }
+    
+    .hero-part,
+    .music-part,
+    .letter-part,
+    .closing-part {
+        flex: 0 0 auto;
+        min-height: 50vh;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-music-section,
+    .letter-closing-section {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .hero-part,
+    .music-part,
+    .letter-part,
+    .closing-part {
+        flex: 0 0 auto;
+        min-height: 55vh;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .main-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin-bottom: 1rem;
+    }
+    
+    .subtitle {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        margin-bottom: 1rem;
+    }
+    
+    .music-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .vinyl-record {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .vinyl-inner {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .vinyl-label {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .special-note {
+        padding: 1rem 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .special-note p {
+        font-size: 0.95rem;
+    }
+    
+    .section-heading {
+        text-align: center;
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .envelope-front {
+        width: 260px;
+        height: 180px;
+        padding: 1.5rem;
+    }
+    
+    .letter-paper {
+        padding: 2rem;
+    }
+    
+    .closing-quote {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        text-align: center;
+        line-height: 1.6;
+    }
+    
+    .closing-note {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-part,
+    .music-part,
+    .letter-part,
+    .closing-part {
+        min-height: 65vh;
+        padding: 1.5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .main-title {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+    }
+    
+    .subtitle {
+        font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+        margin-bottom: 1rem;
+    }
+    
+    .scroll-hint {
+        bottom: 1rem;
+    }
+    
+    .music-container {
+        width: 100%;
+        max-width: 95vw;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .vinyl-record {
+        width: 130px;
+        height: 130px;
+        margin: 0 auto 1.5rem;
+    }
+    
+    .vinyl-inner {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .vinyl-label {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .special-note {
+        padding: 0.9rem 1rem;
+        margin-bottom: 1.2rem;
+        border-left-width: 2px;
+    }
+    
+    .special-note p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .player-info {
+        margin-bottom: 1.5rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .song-name {
+        font-size: 1.3rem;
+    }
+    
+    .song-artist {
+        font-size: 0.85rem;
+    }
+    
+    .section-heading {
+        font-size: clamp(1.2rem, 3vw, 1.6rem);
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    
+    .player-controls {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    
+    .progress-container {
+        gap: 0.5rem;
+    }
+    
+    .time-display {
+        font-size: 0.7rem;
+        min-width: 35px;
+    }
+    
+    .control-buttons {
+        justify-content: center;
+    }
+    
+    .play-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .volume-control {
+        width: 60px;
+    }
+    
+    .envelope-front {
+        width: 220px;
+        height: 150px;
+        padding: 1rem;
+    }
+    
+    .envelope-text {
+        font-size: 0.85rem;
+    }
+    
+    .envelope-seal {
+        font-size: 1.2rem;
+    }
+    
+    .letter-display {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .letter-paper {
+        padding: 1.5rem 1rem;
+    }
+    
+    .letter-greeting {
+        font-size: 1.1rem;
+    }
+    
+    .letter-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    .letter-closing {
+        font-size: 0.95rem;
+    }
+    
+    .close-letter {
+        top: -25px;
+        font-size: 2rem;
+    }
+    
+    .closing-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .closing-quote {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+    }
+    
+    .heart-beats {
+        margin: 1rem 0;
+        font-size: 2rem;
+    }
+    
+    .heart-beats i {
+        font-size: 2rem;
+    }
+    
+    .closing-note {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+}

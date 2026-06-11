@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Anjalee - Every time I hear this song, I think of her</title>
+    
+    <!-- Google Fonts: Handwritten & Dreamy Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Quicksand:wght@300;400;500;600;700&family=Indie+Flower&family=Satisfy&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="starfield" id="starfield"></div>
+    <div class="fireflies" id="fireflies"></div>
+    <div class="flower-petals" id="flowerPetals"></div>
+    <div class="moon"></div>
+    <div class="wildflowers"></div>
+    
+    <!-- Main Content Container (Single Page) -->
+    <div class="main-page">
+        
+        <!-- ===== LETTER & CLOSING SECTION (Page 1) ===== -->
+        <section class="letter-closing-section" id="letterClosing">
+            <!-- LETTER PART -->
+            <div class="letter-part">
+                <h2 class="section-heading">A Letter Written In My Heart</h2>
+            
+            <div class="letter-display">
+                <div class="letter-envelope">
+                    <div class="envelope-front" id="letterEnvelope">
+                        <div class="envelope-decoration">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <p class="envelope-text">Click to open your letter</p>
+                        <div class="envelope-seal">♡</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+             <section class="hero-music-section" id="heroMusic">
+            <!-- HERO PART -->
+            <div class="hero-part">
+                <div class="hero-content">
+                    <h1 class="main-title">Every time I hear this song,<br><span class="highlight-text">I think of her</span></h1>
+                    <p class="subtitle">In the middle of the night, under stars that remind me of you</p>
+                </div>
+            </div>
+            
+            <!-- MUSIC PLAYER PART -->
+            <div class="music-part" id="music">
+            <div class="music-container">
+                <h2 class="section-heading">This Song Reminds Me of You</h2>
+                
+               
+                
+                <div class="vinyl-player">
+                    <div class="vinyl-record" id="vinylRecord">
+                        <div class="vinyl-inner">
+                            <div class="vinyl-label">
+                                <div class="label-text">
+                                    <p id="songTitle">Maname</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="player-info">
+                    <h3 class="song-name" id="songNameDisplay">Maname</h3>
+                    <p class="song-artist" id="songArtistDisplay">Sarah Black / Sathyan Ilanko</p>
+                </div>
+                
+                <div class="player-controls">
+                    <div class="progress-container">
+                        <span class="time-display" id="currentTime">0:00</span>
+                        <div class="progress-track" id="progressBar">
+                            <div class="progress-fill" id="progress"></div>
+                        </div>
+                        <span class="time-display" id="duration">0:00</span>
+                    </div>
+                    
+                    <div class="control-buttons">
+                        <button class="play-btn" id="playPauseBtn" title="Play/Pause">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="volume-btn" id="volumeBtn">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <input type="range" id="volumeSlider" class="volume-control" min="0" max="100" value="70">
+                    </div>
+                </div>
+                
+                <audio id="audioPlayer" loop>
+                    <source src="music/song.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            </div>
+        </section>
+            <!-- CLOSING PART -->
+            <div class="closing-part">
+                <div class="closing-content">
+                    <h2 class="closing-quote">No matter where life takes us,<br><span>you'll always be my favorite thought</span></h2>
+                    
+                    <div class="heart-beats">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    
+                    <p class="closing-note">Forever yours, with all my love ✨</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== HERO & MUSIC SECTION (Page 2) ===== -->
+       
+    </div>
+
+    <!-- ===== LETTER MODAL ===== -->
+    <div class="letter-modal" id="letterModal">
+        <div class="letter-modal-content">
+            <button class="close-letter" id="closeLetterBtn">&times;</button>
+            
+            <div class="letter-paper">
+                <div class="letter-header">
+                    <p class="letter-date" id="letterDate"></p>
+                </div>
+                
+                <div class="letter-body">
+                    <p class="letter-greeting">Dear Anjalee,</p>
+                    <p class="letter-text" id="modalLetterText"></p>
+                    <p class="letter-closing">Forever yours,<br><span>With all my love</span></p>
+                    
+                </div>
+                
+                <div class="letter-decoration">
+                    <i class="fas fa-flower-tulip"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
