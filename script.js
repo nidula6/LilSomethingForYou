@@ -100,7 +100,12 @@ function initMusicPlayer() {
     document.getElementById('songArtistDisplay').textContent = CUSTOMIZATION.songArtist;
     
     // Set special note before song
-    document.getElementById('specialNoteText').textContent = CUSTOMIZATION.specialNote;
+    // Set special note before song (safe check)
+const specialNoteEl = document.getElementById('specialNoteText');
+
+if (specialNoteEl) {
+    specialNoteEl.textContent = CUSTOMIZATION.specialNote;
+}
     
     // Play/Pause button
     playPauseBtn.addEventListener('click', () => {
@@ -184,9 +189,10 @@ function initLetterModal() {
     
     // Open letter on envelope click
     letterEnvelope.addEventListener('click', () => {
-        letterModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
+    console.log("Envelope clicked");
+    letterModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
     
     // Close letter
     closeLetterBtn.addEventListener('click', () => {
